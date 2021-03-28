@@ -52,6 +52,10 @@ def get_latest_local_version(page:str) -> str:
 def main():
     """Return exit value 0 when a new version needs to be downloaded
     """
+        
+    print("CWD: ", os.getcwd())
+    print()
+    
     if not (page := download_local_web_page()):
         print("Unable to download URL: %s" % (LOCALURL))
         sys.exit(10)
@@ -64,9 +68,6 @@ def main():
         print("Unable to download URL: %s" % (LESSURL))
         sys.exit(30)
         return
-    
-    print("CWD: ", os.getcwd())
-    print()
 
     remote_version, _ = get_latest_version_url(page)
     if None == remote_version:
