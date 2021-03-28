@@ -13,7 +13,7 @@ import urllib.request
 import sys
 from shared import download_less_web_page, get_latest_version_url, LESSURL, NEWFILE
 
-LOCALURL="https://api.github.com/repos/jftuga/less-Windows/releases"
+LOCALURL="https://api.github.com/repos/taylortechdev/less-Windows/releases"
 
 def download_local_web_page() -> str:
     """Download and return JSON from LOCALURL
