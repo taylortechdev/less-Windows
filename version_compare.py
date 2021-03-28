@@ -9,6 +9,7 @@ Compare local github version with less web site
 """
 
 import json
+import os
 import urllib.request
 import sys
 from shared import download_less_web_page, get_latest_version_url, LESSURL, NEWFILE
@@ -63,6 +64,9 @@ def main():
         print("Unable to download URL: %s" % (LESSURL))
         sys.exit(30)
         return
+    
+    print("CWD: ", os.getcwd())
+    print()
 
     remote_version, _ = get_latest_version_url(page)
     if None == remote_version:
